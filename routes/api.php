@@ -10,8 +10,8 @@ use App\Http\Controllers\API\ProductCategoryController;
 Route::get('products', [ProductController::class, 'all']);
 Route::get('categories', [ProductCategoryController::class, 'all']);
 
-Route::get('reqister', [UserController::class, 'register']);
-Route::get('login', [UserController::class, 'login']);
+Route::post('register', [UserController::class, 'register']);
+Route::post('login', [UserController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('user', [UserController::class, 'fetch']);
